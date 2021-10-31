@@ -17,9 +17,9 @@ import {
 
 const Main = () => { 
   const [isEnabled, setIsEnabled] = useState(false);
-  const [colorR, setColorR] = useState(0);
-  const [colorG, setColorG] = useState(0);
-  const [colorB, setColorB] = useState(0);
+  const [colorR, setColorR] = useState(255);
+  const [colorG, setColorG] = useState(255);
+  const [colorB, setColorB] = useState(255);
 
   const api = axios.create({
     baseURL: 'https://localhost:3333/',
@@ -69,6 +69,7 @@ const Main = () => {
       <Colors>
         <Text>Vermelho</Text>
         <Slider
+          value={colorR}
           style={{width: 200, height: 40}}
           minimumValue={0}
           maximumValue={255}
@@ -80,6 +81,7 @@ const Main = () => {
 
         <Text>Verde</Text>
         <Slider
+          value={colorG}
           style={{width: 200, height: 40}}
           minimumValue={0}
           maximumValue={255}
@@ -91,6 +93,7 @@ const Main = () => {
 
         <Text>Azul</Text>
         <Slider
+          value={colorB}
           style={{width: 200, height: 40}}
           minimumValue={0}
           maximumValue={255}
